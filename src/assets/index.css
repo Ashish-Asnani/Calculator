@@ -1,0 +1,82 @@
+html * {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.calculator {
+  margin: auto;
+  margin-top: 20px;
+  width: 302px;
+  height: 462px;
+  padding: 25px;
+  box-sizing: border-box;
+  background-image: linear-gradient(#191717d6, #565252);
+}
+
+.calculator-inputs-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.operatorStyle {
+  font-weight: 100;
+  font-family: "open sans light", arial, sans-serif;
+}
+
+button.clear {
+  width: 116px;
+  height: 48px;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: white;
+}
+
+button.calc-input {
+  width: 48px;
+  height: 48px;
+  border: none;
+  font-size: 30px;
+  background: #b8e850;
+  color: white;
+  border: 1px solid white;
+}
+
+button.calc-input.zero {
+  width: 184px;
+  text-align: left;
+  padding-left: 15px;
+}
+
+button.calc-input.numeric {
+  background: #b8e850;
+}
+
+button.calc-input.operator {
+  background: #b8e850;
+  color: white;
+  box-sizing: border-box;
+  padding-bottom: 6px;
+}
+
+.calculator-results {
+  text-align: right;
+}
+
+.calculator-results div:first-child {
+  color: #ffffff;
+  font-size: 40px;
+  height: 55px;
+}
+
+.calculator-results div:last-child {
+  color: #c1c1c1;
+  font-size: 30px;
+}
+
+.calculationDisplay,
+.resultDisplay {
+  overflow: hidden;
+  white-space: nowrap;
+}
