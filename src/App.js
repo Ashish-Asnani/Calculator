@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { updateCalculation, clearCalculation } from "./actions";
 import CalcButton from "./components/CalcButton";
-
+import'./app.css'
 class CalculatorComponent extends Component {
   componentDidMount() {
     // Force scroll on the display
@@ -39,8 +39,9 @@ class CalculatorComponent extends Component {
   render() {
     console.log(this.props)
     return (
-      
-      <div className="calculator">
+      <div>   <h2 style = {{ paddingLeft : 510 }}><span>Basic</span> Calculator  </h2>
+      <div className="calculator z-depth-5">
+        
         <div className="calculator-results">
           <div
             ref="calculationDisplay"
@@ -85,6 +86,7 @@ class CalculatorComponent extends Component {
           <CalcButton value={0} additionalClass="zero" />
           <CalcButton value="+" htmlCode="43" additionalClass="operator" />
         </div>
+      </div>
       </div>
     );
   }

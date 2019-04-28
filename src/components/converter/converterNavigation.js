@@ -8,10 +8,11 @@ const ConverterNavigation = () => {
   return (
     <BrowserRouter>
       <div>
+       
         <NavbarConverter />
         <Switch>
           <Route to path="/Convertor/Money" component={MoneyConverter} />
-          <Route to path="/Convertor/Length" component={LengthConverter} />
+          <Route exact to path="/Convertor/Length" component={LengthConverter} />
         </Switch>
       </div>
     </BrowserRouter>

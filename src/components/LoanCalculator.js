@@ -22,6 +22,7 @@ class LoanCalculator extends Component {
     let { amountValue, yearsValue } = this.state;
 
     return (
+      <div><h2 style = {{ paddingLeft : 510 }}><span>Loan</span> Calculator  </h2>
       <div className="App">
         <h4>I want to borrow ₹{amountValue}</h4>
         <InputRange
@@ -43,6 +44,7 @@ class LoanCalculator extends Component {
         />
 
         <Display years={yearsValue} amount={amountValue} />
+      </div>
       </div>
     );
   }

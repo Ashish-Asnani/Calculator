@@ -18,7 +18,7 @@ class MoneyConverter extends Component {
 // Initializes the currencies with values from the api
  
 componentWillMount(){
-  Axios.get('https://ratesapi.io/api/latest?base='+this.state.fromCurrency)
+  Axios.get('https://api.ratesapi.io/api/latest?base='+this.state.fromCurrency)
 .then(res =>{
 console.log(res)
 this.setState({
@@ -28,6 +28,28 @@ console.log(this.state)
 }).catch(err=>{
   console.log(err)
 })
+
+Axios.get('https://api.ratesapi.io/api/latest')
+.then(res =>{
+console.log(res)
+let bases=res.data.rates;
+console.log(bases)
+
+let baseList=[];
+Object.keys(bases).map(base=>{
+    baseList.push(base)
+})
+console.log(baseList)
+console.log(this.state)
+this.setState({
+    currencies:baseList
+})
+}).catch(err=>{
+  console.log(err)
+})
+
+
+
 }
 // Event handler for the conversion
 convertHandler = () => {
@@ -75,7 +97,7 @@ render() {
     var shown = {
         display: this.state.showLabels===true ? "block" : "none"
     };
-    
+   
    
     return (
         <div className="Converter">
@@ -118,6 +140,7 @@ render() {
                 }
 
                 <h6 style={shown} >The conversion of <b>{this.state.fromCurrency} {this.state.oldAmount} </b> is <b>{this.state.toCurrency} {this.state.amount}</b></h6>
+                
             </div>
     );
 }
